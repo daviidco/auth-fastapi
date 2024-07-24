@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 
 from src.application.use_cases.auth_uc import UserUseCases
-from src.infrastructure.adapters.fastapi.dependecies import get_user_use_cases
+from src.infrastructure.adapters.fastapi.dependencies import get_user_use_cases
 from src.infrastructure.adapters.fastapi.oauth2 import oauth2_scheme
 from src.infrastructure.adapters.fastapi.schemas import (
     user_schemas as schemas_user,
@@ -9,9 +9,6 @@ from src.infrastructure.adapters.fastapi.schemas import (
 from src.infrastructure.adapters.fastapi.schemas.user_schemas import UserSchema
 
 router = APIRouter()
-
-prefix_auth = "/auth"
-
 
 @router.get("/users/me/", response_model=UserSchema)
 async def read_users_me(

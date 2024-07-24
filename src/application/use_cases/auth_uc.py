@@ -8,11 +8,6 @@ from passlib.context import CryptContext
 from src.domain.entities.user_entities import Token, User, UserCreate
 from src.domain.ports.ISettingRepository import ISettingRepository
 from src.domain.ports.IUserRepository import IUserRepository
-from src.infrastructure.config.settings import (
-    get_settings,
-)  # Importar las configuraciones
-
-settings = get_settings()
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
